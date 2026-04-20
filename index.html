@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishabh Nandan | Data Science Professional</title>
+    
+    <!-- Google Fonts: Space Mono (Tech Vibe) & Inter (Clean Readability) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* === CSS STYLES === */
+        :root {
+            --bg-color: #0b0f19; /* Deep dark blue/black */
+            --bg-secondary: #111827;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #00f2fe; /* Neon Cyan */
+            --accent-purple: #4facfe; /* Neon Blue/Purple */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            /* Tech dot grid background */
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 20px 20px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo, .terminal-header {
+            font-family: 'Space Mono', monospace;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Bar - Glassmorphism */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 80px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .greeting {
+            color: var(--accent-cyan);
+            font-family: 'Space Mono', monospace;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        /* Glowing Button */
+        .btn-glow {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--accent-cyan);
+            font-family: 'Space Mono', monospace;
+            border: 1px solid var(--accent-cyan);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-glow:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+        }
+
+        /* Terminal Graphic */
+        .terminal-box {
+            flex: 1;
+            background: #0f141e;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-left: 50px;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #1e293b;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: 'Space Mono', monospace;
+            color: #a3be8c; /* Hacker green text */
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: var(--accent-cyan);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* General Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 50px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+        }
+
+        /* Tech Stack / Skills */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-card {
+            background: var(--bg-secondary);
+            border: 1px solid #1e293b;
+            padding: 25px 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
+        }
+
+        .tech-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            background: -webkit-linear-gradient(var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tech-card span {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 15px rgba(79, 172, 254, 0.2);
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .project-links a {
+            color: var(--text-main);
+            font-size: 20px;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Footer / Contact */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid #1e293b;
+            margin-top: 50px;
+        }
+
+        .socials a {
+            font-size: 24px;
+            color: var(--text-muted);
+            margin: 0 15px;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px var(--accent-cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            #home {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            .terminal-box {
+                margin-left: 0;
+                margin-top: 40px;
+                width: 100%;
+            }
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+            nav ul {
+                display: none; /* Hide nav on mobile for simplicity */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <nav>
+                <div class="logo">&lt;RishabhNandan/&gt;</div>
+                <ul>
+                    <li><a href="#home">01. Home</a></li>
+                    <li><a href="#education">02. Education</a></li>
+                    <li><a href="#skills">03. Stack</a></li>
+                    <li><a href="#experience">04. Experience</a></li>
+                    <li><a href="#projects">05. Work</a></li>
+                    <li><a href="#contact">06. Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
+            
+            <div class="hero-text">
+                <span class="greeting">$ echo "Welcome to Data Science"</span>
+                <h1>Rishabh Nandan<br><span style="color: var(--accent-cyan);">Data Science Professional</span></h1>
+                <p>Aspiring data science professional with a strong foundation in computer applications, eager to leverage analytical and problem-solving skills to drive insights and innovation.</p>
+                <a href="#projects" class="btn-glow">View My Work</a>
+            </div>
+
+            <!-- Fake Terminal Box for Tech Aesthetic -->
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <div class="circle red"></div>
+                    <div class="circle yellow"></div>
+                    <div class="circle green"></div>
+                    <span style="margin-left: 10px;">bash - guest@dev-portfolio:~</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: var(--accent-cyan);">rishabh@portfolio:~$</span> whoami <br>
+                    > Data Science | ML Engineer <br><br>
+                    
+                    <span style="color: var(--accent-cyan);">rishabh@portfolio:~$</span> cat skills.txt <br>
+                    > Loading expertise... <br>
+                    > <span id="typewriter"></span><span class="cursor"></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">01. Education</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 style="color: var(--accent-cyan);">BCA + MCA (Data Science)</h3>
+                    <p style="color: var(--accent-purple); font-weight: 600;">University of Allahabad</p>
+                    <p>2023 - Currently Appearing</p>
+                    <p style="color: var(--text-muted); margin-top: 15px; font-size: 13px;">Specialized post-graduation in Data Science focusing on machine learning, statistical analysis, and advanced data analytics techniques.</p>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: var(--accent-cyan);">12th (Senior Secondary)</h3>
+                    <p style="color: var(--accent-purple); font-weight: 600;">UP Board</p>
+                    <p>2023 | <span style="color: var(--accent-cyan);">58%</span></p>
+                </div>
+                <div class="project-card">
+                    <h3 style="color: var(--accent-cyan);">10th (Secondary)</h3>
+                    <p style="color: var(--accent-purple); font-weight: 600;">UP Board</p>
+                    <p>2021 | <span style="color: var(--accent-cyan);">74%</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills / Tech Stack Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">02. Tech_Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fab fa-python"></i>
+                    <br><span>Python</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-java"></i>
+                    <br><span>Java</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database"></i>
+                    <br><span>SQL</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <br><span>Pandas &amp; NumPy</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-brain"></i>
+                    <br><span>Scikit-learn</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-code"></i>
+                    <br><span>TensorFlow</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <br><span>Tableau &amp; Power BI</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database"></i>
+                    <br><span>MySQL &amp; MongoDB</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-git-alt"></i>
+                    <br><span>Git / GitHub</span>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-terminal"></i>
+                    <br><span>Jupyter Notebooks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">04. Work_Experience</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                        <div>
+                            <h3 style="color: var(--accent-cyan); margin-bottom: 5px;">Assistant in Admission &amp; Data Works</h3>
+                            <p style="color: var(--accent-purple); font-weight: 600; font-size: 14px; margin-bottom: 3px;">ICT Cell - CMP Degree College</p>
+                            <p style="color: var(--text-muted); font-size: 12px;">Ongoing</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 14px;">Responsible for managing student admission workflows, maintaining data integrity, and supporting ICT infrastructure projects. Develop and optimize data management systems while assisting with technical implementation of college-wide initiatives.</p>
+                    <div class="tech-tags" style="margin-top: 15px;">
+                        <span class="tech-tag">Data Management</span>
+                        <span class="tech-tag">Administrative Systems</span>
+                        <span class="tech-tag">Database</span>
+                        <span class="tech-tag">Excel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">05. Featured_Builds</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1: Aadhaar Accessibility -->
+                <div class="project-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <i class="far fa-folder" style="font-size: 30px; color: var(--accent-cyan);"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/rishabhnandan/aadhaar-accessibility-analytics" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://aadhaar-analytics-demo.vercel.app" title="Live Demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Aadhaar Accessibility &amp; Inclusion Analytics</h3>
+                    <p>A comprehensive frontend application analyzing accessibility metrics and inclusion statistics for Aadhaar digital infrastructure. Built with modern web technologies to provide real-time data visualization and interactive dashboards for policy insights.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Frontend</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <i class="far fa-folder" style="font-size: 30px; color: var(--accent-cyan);"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/rishabhnandan/student-performance-predictor" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://student-predictor-ml.herokuapp.com" title="Live Demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Predictive Analysis of Student Performance</h3>
+                    <p>Utilized Python and machine learning models to predict academic outcomes based on attendance and previous scores. Achieved an accuracy of 85% with Random Forest and Logistic Regression algorithms.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <i class="far fa-folder" style="font-size: 30px; color: var(--accent-cyan);"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/rishabhnandan/sales-dashboard-tableau" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://public.tableau.com/app/profile/rishabh.nandan" title="Live Demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Sales Dashboard Development</h3>
+                    <p>Designed an interactive sales dashboard using Tableau to visualize and analyze key sales metrics for a mock retail company. Enabled users to filter data by region, product, and time period for better decision-making.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Business Intelligence</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <i class="far fa-folder" style="font-size: 30px; color: var(--accent-cyan);"></i>
+                        <div class="project-links">
+                            <a href="https://github.com/rishabhnandan/data-insights-portal" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://data-insights-portal.netlify.app" title="Live Demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3>Data Visualization &amp; Analysis Portal</h3>
+                    <p>Developed a comprehensive data insights portal featuring interactive visualizations, advanced filtering, and real-time analytics. Integrated multiple data sources to provide unified analytics experience for data-driven decision making.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Tableau</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Interests Section -->
+    <section id="interests">
+        <div class="container">
+            <h2 class="section-title">06. Leadership & Interests</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-chart-line" style="color: var(--accent-cyan); margin-right: 10px;"></i>Data Visualization</h3>
+                    <p>Passionate about transforming complex data into compelling visual narratives that drive actionable insights and informed decision-making across organizations.</p>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-microphone" style="color: var(--accent-cyan); margin-right: 10px;"></i>Public Speaking</h3>
+                    <p>Active participant in leadership development programs and university events. Committed to enhancing communication and presentation skills through continuous practice and engagement.</p>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fas fa-book" style="color: var(--accent-cyan); margin-right: 10px;"></i>Emerging Technologies</h3>
+                    <p>Keen interest in exploring and understanding cutting-edge technologies, industry trends, and innovations that shape the future of data science and artificial intelligence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 class="section-title">07. Get_In_Touch</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Seeking opportunities to contribute to impactful data science projects and develop technical expertise. Feel free to reach out for collaborations or discussions!
+            </p>
+            <a href="mailto:rishabhnandan789@gmail.com" class="btn-glow" style="margin-bottom: 50px;">Send Email</a>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 14px;">
+                <i class="fas fa-phone" style="color: var(--accent-cyan);"></i> +91–9559178904 | 
+                <i class="fas fa-map-marker-alt" style="color: var(--accent-cyan);"></i> Ghazipur, Uttar Pradesh
+            </p>
+            
+            <div class="socials">
+                <a href="https://github.com/RishabhNandan" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/rishabh-nandan" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/RishabhNandan" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:rishabhnandan789@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p style="margin-top: 30px; font-family: 'Space Mono', monospace; font-size: 12px; color: var(--text-muted);">
+                &copy; 2024 Built by Rishabh Nandan. <br>
+                <i class="fas fa-code" style="color: var(--accent-cyan);"></i> Copyright © 2024 Rishabh Nandan. <i class="fas fa-heart" style="color: #ff5f56;"></i> | Aspiring Data Science Professional
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Typewriter JavaScript -->
+    <script>
+        // Array of tech terms to type out
+        const techSkills =[
+            "Data Science & ML...", 
+            "Predictive Analytics...", 
+            "Data Visualization...", 
+            "Statistical Analysis...", 
+            "Problem Solving..."
+        ];
+        
+        let skillIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeSpeed = 100;
+        const deleteSpeed = 50;
+        const delayBetweenSkills = 2000;
+
+        function typeWriter() {
+            const currentSkill = techSkills[skillIndex];
+            const typedTextElement = document.getElementById("typewriter");
+
+            if (isDeleting) {
+                // Remove a character
+                typedTextElement.textContent = currentSkill.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Add a character
+                typedTextElement.textContent = currentSkill.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // Logic for timing and switching states
+            let timeOut = isDeleting ? deleteSpeed : typeSpeed;
+
+            if (!isDeleting && charIndex === currentSkill.length) {
+                // Word is fully typed, pause before deleting
+                timeOut = delayBetweenSkills;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                // Word is fully deleted, move to next word
+                isDeleting = false;
+                skillIndex = (skillIndex + 1) % techSkills.length;
+                timeOut = 500; // Small pause before typing next word
+            }
+
+            setTimeout(typeWriter, timeOut);
+        }
+
+        // Start the typewriter effect when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+
+</body>
+</html> 
