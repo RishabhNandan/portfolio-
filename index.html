@@ -71,6 +71,21 @@
             padding: 20px 0;
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+            object-fit: cover;
+        }
+
         nav .logo {
             font-size: 24px;
             font-weight: 700;
@@ -353,6 +368,9 @@
             .hero-text p {
                 margin: 0 auto 30px;
             }
+            .nav-profile {
+                display: none;
+            }
             nav ul {
                 display: none; /* Hide nav on mobile for simplicity */
             }
@@ -365,14 +383,17 @@
     <header>
         <div class="container nav-container">
             <nav>
-                <div class="logo">&lt;RishabhNandan/&gt;</div>
+                <div class="nav-left">
+                    <img src="profile.jpeg" alt="Profile" class="nav-profile">
+                    <div class="logo">Rishabh Nandan</div>
+                </div>
                 <ul>
-                    <li><a href="#home">01. Home</a></li>
-                    <li><a href="#education">02. Education</a></li>
-                    <li><a href="#skills">03. Stack</a></li>
-                    <li><a href="#experience">04. Experience</a></li>
-                    <li><a href="#projects">05. Work</a></li>
-                    <li><a href="#contact">06. Contact</a></li>
+                    <li><a href="#home"> Home</a></li>
+                    <li><a href="#education"> Education</a></li>
+                    <li><a href="#skills">Stack</a></li>
+                    <li><a href="#experience"> Experience</a></li>
+                    <li><a href="#projects"> Work</a></li>
+                    <li><a href="#contact"> Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -383,9 +404,13 @@
         <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
             
             <div class="hero-text">
-                <span class="greeting">$ echo "Welcome to Data Science"</span>
+                <span class="greeting"> "Welcome to My Profile "</span>
                 <h1>Rishabh Nandan<br><span style="color: var(--accent-cyan);">Data Science Professional</span></h1>
-                <p>Aspiring data science professional with a strong foundation in computer applications, eager to leverage analytical and problem-solving skills to drive insights and innovation.</p>
+                <p>Hello👋
+
+I’m a Data Science student (BCA + MCA) passionate about turning data into meaningful insights. I work with Java, SQL, HTML, CSS, Git, and GitHub, and enjoy building simple, practical, and user-focused projects.
+
+I’m currently focused on becoming a Data Analyst, with a long-term goal of exploring Machine Learning and advanced Data Science.</p>
                 <a href="#projects" class="btn-glow">View My Work</a>
             </div>
 
@@ -395,13 +420,13 @@
                     <div class="circle red"></div>
                     <div class="circle yellow"></div>
                     <div class="circle green"></div>
-                    <span style="margin-left: 10px;">bash - guest@dev-portfolio:~</span>
+                    <span style="margin-left: 10px;">Rishabh:~</span>
                 </div>
                 <div class="terminal-body">
-                    <span style="color: var(--accent-cyan);">rishabh@portfolio:~$</span> whoami <br>
+                    <span style="color: var(--accent-cyan);">rishabh@portfolio:~$</span> who am i <br>
                     > Data Science | ML Engineer <br><br>
                     
-                    <span style="color: var(--accent-cyan);">rishabh@portfolio:~$</span> cat skills.txt <br>
+                    <span style="color: var(--accent-cyan);">rishabh@portfolio:~$</span>  skills.txt <br>
                     > Loading expertise... <br>
                     > <span id="typewriter"></span><span class="cursor"></span>
                 </div>
